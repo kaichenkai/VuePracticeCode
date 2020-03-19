@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>v-on</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="click事件" v-on:click="doSomething('watch TV')">
+        <!-- <input type="button" value="click事件" @click="doSomething">
+        <input type="button" value="双击事件" v-on:dblclick="doSomething">
+        <input type="button" value="双击事件" @dblclick="doSomething"> -->
+        <h2 @click="changeFood">{{ food }}</h2>
+        <h2 @click="changeFood" v-text="food"></h2>
+
+        <!--事件修饰符  -->
+        <input type="text" @keyup.enter="sayHi">
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                food: "西红柿炒鸡蛋"
+            },
+            methods: {
+                doSomething: function(p1) {
+                    alert(p1)
+                },
+                changeFood: function() {
+                    // console.log(this.food)
+                    this.food += "真好吃"
+                },
+                sayHi: function(){
+                    alert("吃了没阿？")
+                }
+            }
+        })
+    </script>
+</body>
+</html>

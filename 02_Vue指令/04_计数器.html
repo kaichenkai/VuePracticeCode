@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>v-on</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    /* css 写的真是丑 */
+    .input-num{
+        margin: 1px;
+    }
+
+    span{
+        width: 50px;
+        height: 20px;
+        background-color: white;
+    }
+    button {
+        width: 40px;
+        height: 20px;
+        background-color: rgb(163, 157, 157);
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div class="input-num">
+            <button @click="sub">-</button>
+            <span>{{ num }}</span>
+            <button @click="add">+</button>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {num: 1},
+            methods: {
+                add: function() {
+                    if (this.num >= 10) {
+                        alert("已经是最大值了")
+                    } else {
+                        this.num ++
+                    }
+                },
+                sub: function() {
+                    if (this.num <= 0) {
+                        alert("已经是最小值了")
+                    } else {
+                        this.num --
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

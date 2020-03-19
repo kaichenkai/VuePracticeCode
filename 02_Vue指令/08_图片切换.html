@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>图片切换</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    input{
+        width: 200px;
+        height: 500px;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <input type="button" value="上一张"  @click="prev" v-show="index!=0">
+        <img :src="imgSrcArr[index]" alt="">
+        <input type="button" value="下一张" @click="next" v-show="index!=imgSrcArr.length - 1">
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                imgSrcArr: ["http://dimg02.c-ctrip.com/images/fd/tg/g2/M02/8B/33/Cghzf1Ww3rCAKMvTABUl9T2-0U8651_R_1600_10000_Mtg_7.jpg",
+                            "http://attach.bbs.miui.com/forum/201409/09/130415ome6e930vp99to05.jpg",
+                            "http://img5.imgtn.bdimg.com/it/u=1772088158,2402933919&fm=26&gp=0.jpg",
+                            "http://img3.imgtn.bdimg.com/it/u=2050929743,2388607208&fm=26&gp=0.jpg",
+                            "http://pic1.win4000.com/wallpaper/e/56cfa8bb8fbb8.jpg"
+                            ],
+                index: 0
+            },
+            methods: {
+                prev:function(){
+                    this.index --
+                },
+                next:function(){
+                    this.index ++
+                }
+            }
+        })
+    </script>
+</body>
+</html>

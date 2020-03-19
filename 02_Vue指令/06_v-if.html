@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>v-if</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="切换显示" @click="changeIsShow">
+        <div v-if="isShow">hello Vue</div>
+        <div v-show="isShow">hello Vue -- v-show修饰</div>
+        
+        <!-- 当 temperature < 35 时去掉 h2 标签 -->
+        <input type="button" value="减低温度" @click="changeTemperature">
+        <h2 v-if="temperature > 35">热死了</h2>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isShow: false,
+                temperature: 40
+            },
+            methods: {
+                changeIsShow: function() {
+                    this.isShow = !this.isShow
+                },
+                changeTemperature:function() {
+                    this.temperature --
+                }
+            }
+        })
+    </script>
+</body>
+</html>
