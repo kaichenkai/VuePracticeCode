@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据集合_map</title>
+</head>
+<body>
+
+<script>
+    // 创建一个 map
+    let map = new Map([
+        ["name", "xiaochen"],
+        ["age", "18"],
+        [{friends: ["johny", "anson"]}, "一起写代码阿"]
+    ]);
+    // console.log(map);
+
+    // size
+    console.log(map.size); // 3
+
+    // set get
+    map.set("sex", "man")
+    console.log(map.get("sex"));  // man
+
+
+    // delete
+    console.log(map.delete("sex")); // true
+
+    // has
+    console.log(map.has("name")); // true
+
+    // clear
+    // map.clear()
+    // console.log(map);
+
+    // keys, values, entries
+    console.log(map.keys());
+    console.log(map.values());
+    console.log(map.entries());
+
+    // 遍历
+    map.forEach(function (key, value){
+        console.log(key + ":" + value);
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>symbol</title>
+</head>
+<body>
+
+<script>
+    let symbol1 = Symbol("name");
+    let symbol2 = Symbol("name");
+    console.log(symbol1 === symbol2);  // false
+
+    let student = {};
+    student[symbol1] = "约翰";
+    student[symbol2] = "johny";
+    console.log(student);
+
+</script>
+
+</body>
+</html>

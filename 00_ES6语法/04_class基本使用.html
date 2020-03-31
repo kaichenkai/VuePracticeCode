@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04_class基本使用</title>
+</head>
+<body>
+
+<script>
+    // ES5 写法
+    function Student(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+
+    Student.prototype = {
+        constructor: Student,
+        study (){
+            console.log(this.name + "在学习前端开发");
+        }
+    };
+
+    var s = new Student("johny", 12, "girl");
+    s.study();  // johny在学习前端开发
+
+
+
+    // class Student{
+    //     // 构造方法
+    //     constructor(name, age, sex){
+    //         this.name = name;
+    //         this.age = age;
+    //         this.sex = sex;
+    //     }
+    //
+    //     // 成员方法
+    //     study(){
+    //         console.log(this.name + "在学习前端开发");
+    //     }
+    // }
+    //
+    // // 创建对象, 调用成员方法
+    // let s = new Student("johny", 12, "girl");
+    // s.study()  // johny在学习前端开发
+
+</script>
+
+</body>
+</html>
