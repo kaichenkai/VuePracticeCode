@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象扩展</title>
+</head>
+<body>
+<ul>
+    <li>22</li>
+    <li>22</li>
+    <li>22</li>
+    <li>22</li>
+    <li>22</li>
+    <li>22</li>
+    <li>22</li>
+</ul>
+
+
+<script>
+
+    // 模板字符串, 引用外部变量
+    // let str = "适合写代码";
+    // let className= "test";
+    // let html = `<html>
+    //                 <head>
+    //                     头部信息
+    //                 </head>
+    //
+    //                 <body>
+    //                     <div>
+    //                         <p class="${className}">今天天气很好, ${str}</p>
+    //                     </div>
+    //                 </body>
+    //             </html>`;
+    // console.log(html);
+
+
+    // 数组的扩展
+    // Array.from 获取 li 标签
+    let allLis = document.querySelectorAll("li");
+    // console.log(allLis);
+    // console.log(Array.isArray(allLis)); // false
+
+    // let arr = Array.from(allLis);
+    // // console.log(arr);
+    // // console.log(Array.isArray(arr)); // true
+    // // Array.of
+    // let array = Array.of(1, 2, 3, 4, 5);
+    // // console.log(array);  // [1, 2, 3, 4, 5]
+
+
+    // 对象的扩展, key 和 value 是一样的话, 写一个就可以(不建议这样用)
+    let name = "xiaoming";
+    let age = 20;
+    // let student = {
+    //     name,
+    //     age
+    // };
+    // console.log(student);
+    // 对象的合并: Object.assign()
+    let obj1 = {name: "xiaoming"};
+    let obj2 = {age: 20};
+    let obj3 = {sex: "man"};
+    let obj = {friends: "xiaochen"};
+    Object.assign(obj, obj1, obj2, obj3);
+    // console.log(obj);  // {friends: "xiaochen", name: "xiaoming", age: 20, sex: "man"}
+
+
+    // 延展操作符
+    let str = "今天的天气很好";
+    let strArr = [...str];
+    // console.log(typeof(strArr));  // object
+    // console.log(strArr);  // ["今", "天", "的", "天", "气", "很", "好"]
+    // Array 与 Set 互相转换
+    let array = [1, 2, 3, "xiaochen", 3, 2];
+    // let set = new Set([...array]);
+    let set = new Set(array);
+    // console.log(set);  // Set(4) {1, 2, 3, "xiaochen"}
+    let arr = [...set];
+    // console.log(arr);  // [1, 2, 3, "xiaochen"]
+
+
+</script>
+
+</body>
+</html>

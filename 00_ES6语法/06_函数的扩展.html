@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06_函数的扩展</title>
+</head>
+<body>
+<script>
+    // 形参设置默认值
+    // function sum(num1=10, num2=20) {
+    //     return num1 + num2
+    // }
+    //
+    // console.log(sum());  // 30
+    //
+
+    // 参数形式, 延展操作符(不定长参数)
+    // function sum(name, ...arr) {
+    //     let count = 0;
+    //     console.log(name); // xiaoming
+    //     for(let e of arr){
+    //         count += e;
+    //     }
+    //     return count;
+    // }
+    // console.log(sum("xiaoming", ...[20, 30, 50]));
+
+
+    // 箭头函数
+    // 当匿名函数使用
+    let sum = (num1, num2) => {
+        return num1 + num2
+    };
+    console.log(sum(10, 20));  // 30
+    // 遍历操作
+    let arr = ["xiaoming", "xiaochen", "anson"];
+    // arr.forEach(function (value, index) {
+    //     console.log(index + ":" + value);
+    // })
+    // 使用箭头函数进行遍历
+    // arr.forEach((value, index) => {
+    //     console.log(index + ":" + value);
+    // });
+
+
+    // 指向问题
+    function demo() {
+        setTimeout(function () {
+            console.log(this);  // window
+        });
+
+        setTimeout(() => {
+            console.log(this);  // {} obj
+        })
+    }
+
+    let obj = {};
+    demo.call(obj)
+
+
+</script>
+</body>
+</html>
